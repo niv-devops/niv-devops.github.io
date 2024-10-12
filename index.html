@@ -1,1 +1,197 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niv's DevOps Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff77ff;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00bfff;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 0 0 20px #ff77ff, 0 0 30px #00bfff;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0;
+            text-shadow: 0 0 10px #00bfff;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff00ff, #00bfff);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #00bfff, #ff00ff);
+            transform: scale(1.05);
+        }
+
+        .projects {
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(50, 50, 50, 0.8);
+            border: 2px solid #ff77ff; /* Pink */
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 119, 255, 0.5);
+        }
+
+        .project-title {
+            color: #ff77ff;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px #ff77ff;
+        }
+
+        .github-link {
+            color: #00bfff;
+            text-decoration: none;
+            transition: text-shadow 0.3s;
+        }
+
+        .github-link:hover {
+            text-shadow: 0 0 10px #00bfff;
+        }
+
+        .about {
+            padding: 50px 20px;
+            background: rgba(30, 30, 30, 0.8);
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-media {
+            padding: 20px;
+        }
+
+        .social-icon {
+            color: #ff77ff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .social-icon:hover {
+            text-shadow: 0 0 10px #ff77ff;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Niv Zilberman</h1>
+    <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h2>DevOps Practitioner</h2>
+        <p>Bridging Development and Operations</p>
+        <button class="btn">View My Projects</button>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+    <div class="project-card">
+        <h3 class="project-title">Weather WebApp</h3>
+        <p class="project-description">Simple CI/CD pipeline for a Python weather web application.</p>
+        <a href="https://github.com/yourusername/project" class="github-link">GitHub</a>
+    </div>
+    <div class="project-card">
+        <h3 class="project-title">DevSecOps</h3>
+        <p class="project-description">Security focused CI/CD pipeline for a Python web application.</p>
+        <a href="https://github.com/yourusername/project" class="github-link">GitHub</a>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Brief overview of skills and experience... will be edited later on...</p>
+    <p>Tech Stack: Docker, Kubernetes, CI/CD, etc.</p>
+</section>
+
+<section class="social-media">
+    <a href="https://github.com/niv-devops" class="social-icon">GitHub</a>
+    <a href="https://linkedin.com/in/yourprofile" class="social-icon">LinkedIn</a>
+    <a href="https://hub.docker.com/u/devopsgoofy" class="social-icon">DockerHub</a>
+</section>
+
+<footer class="footer">
+    <p>© 2024 Niv Zilberman. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
