@@ -4,183 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niv's DevOps Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
+            background-color: #121212;
+            color: #e6e6e6;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+            padding: 0.5em;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
+            background: linear-gradient(45deg, #ff0080, #00ff90);
             padding: 20px;
-            background: rgba(30, 30, 30, 0.8);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            color: white;
         }
 
-        h1 {
-            font-size: 2.5em;
-            background: linear-gradient(45deg, #ff00ff, #00bfff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
         }
 
         nav a {
-            color: #e0e0e0;
-            margin: 0 15px;
+            margin: 10px;
             text-decoration: none;
-            transition: color 0.3s;
+            color: white;
         }
 
         nav a:hover {
-            color: #00bfff;
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
+
+        nav img {
+            transition: transform 0.2s;
+        }
+
+        nav img:hover {
+            transform: scale(1.2);
         }
 
         .hero {
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: url('https://images.unsplash.com/photo-1516168810939-79b33800f27d?fit=crop&w=1000&h=600&q=80') center/cover no-repeat;
+            color: white;
             text-align: center;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            padding: 80px 0;
         }
 
         .hero h2 {
-            font-size: 3em;
-            margin: 0;
-            text-shadow: 0 0 20px #ff77ff, 0 0 30px #00bfff;
+            font-size: 3rem;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
         }
 
         .hero p {
-            font-size: 1.5em;
-            margin: 10px 0;
-            text-shadow: 0 0 10px #00bfff;
+            font-size: 1.5rem;
+            margin-top: 10px;
         }
 
-        .btn {
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #ff00ff, #00bfff);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            color: #1a1a1a;
-            font-weight: bold;
+        .skills {
+            padding: 40px;
+            background-color: #1e1e1e;
+            text-align: center;
         }
 
-        .btn:hover {
-            background: linear-gradient(45deg, #00bfff, #ff00ff);
-            transform: scale(1.05);
+        .skills h2 {
+            font-size: 2rem;
+            color: #ff00ff;
+            margin-bottom: 20px;
         }
 
+        .skills .table-wrapper {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            padding: 15px;
+            border: 1px solid #444;
+        }
+
+        table th {
+            background-color: #333;
+            text-align: center;
+            color: #ff00ff;
+        }
+
+        table td {
+            background-color: #222;
+        }
+        
         .projects {
-            padding: 50px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            background: #121212;
+            color: #e6e6e6;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
 
         .project-card {
-            background: rgba(50, 50, 50, 0.8);
-            border: 2px solid #ff77ff;
-            border-radius: 8px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
             padding: 20px;
-            transition: transform 0.2s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 119, 255, 0.5);
-        }
-
-        .project-title {
-            color: #ff77ff;
-            font-size: 1.5em;
-            text-shadow: 0 0 10px #ff77ff;
-        }
-
-        .github-link {
-            color: #00bfff;
-            text-decoration: none;
-            transition: text-shadow 0.3s;
-        }
-
-        .github-link:hover {
-            text-shadow: 0 0 10px #00bfff;
-        }
-
-        .about {
-            padding: 50px 20px;
-            background: rgba(30, 30, 30, 0.8);
-            text-align: center;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .social-media {
-            padding: 20px;
-        }
-
-        .social-icon {
-            color: #ff77ff;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .social-icon:hover {
-            text-shadow: 0 0 10px #ff77ff;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(30, 30, 30, 0.8);
-            box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .pipeline-section {
-            text-align: center;
-            padding: 50px 20px;
-            position: relative;
-        }
-
-        .infinity-icon {
-            width: 800px;
-            height: auto;
-            margin: 0 auto;
-        }
-
-        .tool-icons {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 200px;
-            height: 200px;
-        }
-
-        .tool-icons img {
-            width: 100px;
-            height: 100px;
             margin: 10px;
-            transition: transform 0.3s;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+            text-align: center;
         }
 
-        .tool-icons img:hover {
-            transform: scale(1.2);
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #ff00ff;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #cccccc;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff0080, #00ff90);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #00ff90, #ff0080);
+        }
+        
+        footer {
+            background-color: #1e1e1e;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: #999;
+        }
+
+        footer p a {
+            color: #00ff90;
+            text-decoration: none;
+        }
+
+        footer p a:hover {
+            color: #ff0080;
         }
     </style>
 </head>
@@ -191,7 +183,7 @@
     <nav>
         <a href="https://github.com/niv-devops"><img src="https://static-00.iconduck.com/assets.00/github-desktop-icon-256x256-rporzkkh.png" width="40" height="40" alt="GitHub"/></a>
         <a href="https://hub.docker.com/u/devopsgoofy"><img src="https://www.padok.fr/hubfs/Imported_Blog_Media/docker-hub-hack-blog-banner-2.webp" width="100" height="50" alt="Docker Hub"/></a>
-        <a href="https://linkedin.com/in/niv-zilberman"><img src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png" width="65" height="65" alt="LinkedIn"/></a>
+        <a href="https://www.linkedin.com/in/niv-zilberman/"><img width="32px" alt="LinkedIn" title="LinkedIn" src="https://i.imgur.com/yRpa1dQ.png"/></a>
     </nav>
 </header>
 
@@ -204,89 +196,100 @@
     </div>
 </section>
 
-        <!-- Skills -->
-        <section class="skills">
-          <h2 class="major">Skills</h2>
-          <img src="https://www.doit.com/wp-content/uploads/2023/04/aws-dev-ops-hero-graphic-1.png" alt="devops" width="350" height="170"/>
-          <div class="table-wrapper">
-            <table>
-              <thead>
+<section class="skills">
+    <h2 class="major">Skills</h2>
+    <img src="https://www.doit.com/wp-content/uploads/2023/04/aws-dev-ops-hero-graphic-1.png" alt="devops" width="350" height="170"/>
+    <div class="table-wrapper">
+        <table>
+            <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Technologies</th>
+                    <th>Category</th>
+                    <th>Technologies</th>
                 </tr>
-              </thead>
-              <tbody>
+            </thead>
+            <tbody>
                 <tr>
-                  <td>💻 Programming</td>
-                  <td>
-                    <a href="https://www.cprogramming.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a>
-                    <a href="https://www.java.com/en" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png" alt="java" width="40" height="40"/> </a>
+                    <td>💻 Programming</td>
+                    <td>
+                      <a href="https://www.cprogramming.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a>
+                      <a href="https://www.java.com/en" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png" alt="java" width="40" height="40"/> </a>
+                      <a href="https://kotlinlang.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="kotlin" width="40" height="40"/> </a>
                     <a href="https://www.gnu.org/software/bash" target="_blank" rel="noreferrer"> <img src="https://i0.wp.com/cachecrew.com/blog/wp-content/uploads/2023/03/kisspng-bash-shell-script-command-line-interface-z-shell-5b3df572212d73.0687702015307871861359.png?fit=528%2C528&ssl=1" alt="bash" width="40" height="40"/> </a>
-                    <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
-                    <a href="https://groovy-lang.org" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Groovy-logo.svg/800px-Groovy-logo.svg.png" alt="groovy" width="40" height="40"/> </a>
-                    <a href="https://yaml.org" target="_blank" rel="noreferrer"> <img src="https://cdn-icons-png.flaticon.com/256/9749/9749063.png" alt="markdown" width="40" height="40"/> </a>
-                    <a href="https://www.mysql.com" target="_blank" rel="noreferrer"> <img src="https://cdn.freelogovectors.net/svg12/azure_sql_database_logo_freelogovectors.net.svg" alt="sql" width="40" height="40"/> </a>
-                    <a href="https://learn.microsoft.com/en-us/office/vba/api/overview/" target="_blank" rel="noreferrer"> <img src="https://virochenko.gallerycdn.vsassets.io/extensions/virochenko/vba-fullcodesnippets/1.4.0/1699541420755/Microsoft.VisualStudio.Services.Icons.Default" alt="vba" width="40" height="40"/> </a>
-                    <a href="https://html.spec.whatwg.org" target="_blank" rel="noreferrer"> <img src="https://cdn-icons-png.freepik.com/256/3128/3128323.png?semt=ais_hybrid" alt="html" width="40" height="40"/> </a>
-                    <a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="css" width="40" height="40"/> </a>
-                    <a href="https://ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" rel="noreferrer"> <img src="https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png" alt="javascript" width="40" height="40"/> </a>
+<a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
+<a href="https://groovy-lang.org" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Groovy-logo.svg/800px-Groovy-logo.svg.png" alt="groovy" width="40" height="40"/> </a>
+<a href="https://yaml.org" target="_blank" rel="noreferrer"> <img src="https://cdn-icons-png.flaticon.com/256/9749/9749063.png" alt="markdown" width="40" height="40"/> </a>
+<a href="https://www.mysql.com" target="_blank" rel="noreferrer"> <img src="https://cdn.freelogovectors.net/svg12/azure_sql_database_logo_freelogovectors.net.svg" alt="sql" width="40" height="40"/> </a>
+<a href="https://learn.microsoft.com/en-us/office/vba/api/overview/" target="_blank" rel="noreferrer"> <img src="https://virochenko.gallerycdn.vsassets.io/extensions/virochenko/vba-fullcodesnippets/1.4.0/1699541420755/Microsoft.VisualStudio.Services.Icons.Default" alt="vba" width="40" height="40"/> </a>
+<a href="https://html.spec.whatwg.org" target="_blank" rel="noreferrer"> <img src="https://cdn.iconscout.com/icon/free/png-256/free-html-5-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-language-pack-logos-icons-1175208.png?f=webp&w=256" alt="html" width="40" height="40"/> </a>
+<a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="css" width="40" height="40"/> </a>
+<a href="https://ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png" alt="javascript" width="40" height="40"/> </a>
+<a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer"> <img src="https://img.icons8.com/?size=128&id=ewGOClUtmFX4&format=png" alt="flask" width="40" height="40"/> </a>
+<a href="https://dotnet.microsoft.com/en-us/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/dotnet-icon-2048x2048-6nj1im30.png" alt="dotnet" width="40" height="40"/> </a>
                   </td>
+                    </td>
                 </tr>
                 <tr>
-                  <td>♾️ CI/CD</td>
-                  <td>
-                    <a href="https://www.jenkins.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="jenkins" width="40" height="40"/> </a>
-                    <a href="https://github.com/features/actions" target="_blank" rel="noreferrer"> <img src="https://miro.medium.com/v2/resize:fit:400/1*txwKGJOoQ2W0ka_9htbu0Q.png" alt="GitHubActions" width="40" height="40"/> </a>
-                    <a href="https://argoproj.github.io/cd/" target="_blank" rel="noreferrer"> <img src="https://metakube.com/content/images/2023/02/argo-icon-color.png" alt="ArgoCD" width="40" height="40"/> </a>
-                    <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a>
-                    <a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a>
-                    <a href="https://www.ansible.com/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/file-type-ansible-icon-256x256-ubp9wpth.png" alt="ansible" width="40" height="40"/> </a>
-                    <a href="https://www.terraform.io/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/terraform-icon-1803x2048-hodrzd3t.png" alt="terraform" width="40" height="40"/> </a>
-                    <a href="https://prometheus.io/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/prometheus-icon-511x512-1vmxbcxr.png" alt="prometheus" width="40" height="40"/> </a>
-                    <a href="https://grafana.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Grafana_icon.svg" alt="grafana" width="40" height="40"/> </a>
-                    <a href="https://www.elastic.co/" target="_blank" rel="noreferrer"> <img src="https://global.discourse-cdn.com/uipath/optimized/3X/5/4/5461df8fd2fe783981b0180332821184b729980e_2_500x500.png" alt="elkstack" width="40" height="40"/> </a>
-                    <a href="https://jfrog.com/" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/J/jfrog-logo-BECF90A154-seeklogo.com.png" alt="jfrog" width="40" height="40"/> </a>
-                  </td>
+                    <td>♾️ CI/CD</td>
+                    <td>
+                        <a href="https://www.jenkins.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="jenkins" width="40" height="40"/> </a>
+<a href="https://github.com/features/actions" target="_blank" rel="noreferrer"> <img src="https://miro.medium.com/v2/resize:fit:400/1*txwKGJOoQ2W0ka_9htbu0Q.png" alt="GitHubActions" width="40" height="40"/> </a>
+<a href="https://argoproj.github.io/cd/" target="_blank" rel="noreferrer"> <img src="https://metakube.com/content/images/2023/02/argo-icon-color.png" alt="ArgoCD" width="40" height="40"/> </a>
+<a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a>
+<a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a>
+<a href="https://helm.sh/" target="_blank" rel="noreferrer"> <img src="https://miro.medium.com/v2/resize:fit:303/1*nViWw5hFgS7l3vu1RkO3YA.png" alt="helm" width="40" height="40"/> </a>
+<a href="https://www.ansible.com/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/file-type-ansible-icon-256x256-ubp9wpth.png" alt="ansible" width="40" height="40"/> </a>
+<a href="https://www.terraform.io/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/terraform-icon-1803x2048-hodrzd3t.png" alt="terraform" width="40" height="40"/> </a>
+<a href="https://prometheus.io/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/prometheus-icon-511x512-1vmxbcxr.png" alt="prometheus" width="40" height="40"/> </a>
+<a href="https://grafana.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Grafana_icon.svg" alt="grafana" width="40" height="40"/> </a>
+<a href="https://www.elastic.co/" target="_blank" rel="noreferrer"> <img src="https://global.discourse-cdn.com/uipath/optimized/3X/5/4/5461df8fd2fe783981b0180332821184b729980e_2_500x500.png" alt="elkstack" width="40" height="40"/> </a>
+<a href="https://jfrog.com/" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/J/jfrog-logo-BECF90A154-seeklogo.com.png" alt="jfrog" width="40" height="40"/> </a>
+<a href="https://maven.apache.org/" target="_blank" rel="noreferrer"> <img src="https://www.zeespire.com/assets/images/posts/0013/maven.png" alt="maven" width="40" height="40"/> </a>
+<a href="https://gradle.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.iconscout.com/icon/free/png-256/free-gradle-2-1174969.png" alt="gradle" width="40" height="40"/> </a>
+                    </td>
                 </tr>
                 <tr>
-                  <td>☁️ Cloud & DB</td>
-                  <td>
-                    <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a>
-                    <a href="https://azure.microsoft.com/en-us" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" alt="azure" width="40" height="40"/> </a>
-                    <a href="https://www.vmware.com/" target="_blank" rel="noreferrer"> <img src="https://www.cloudcomputing-news.net/wp-content/uploads/2022/02/vmware-logo.png" alt="vmwware" width="40" height="40"/> </a>
-                    <a href="https://www.mysql.com" target="_blank" rel="noreferrer"> <img src="https://cdn.clever-cloud.com/uploads/2023/03/mysql.svg" alt="mysql" width="40" height="40"/> </a>
-                    <a href="https://www.mongodb.com" target="_blank" rel="noreferrer"> <img src="https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png" alt="mongodb" width="40" height="40"/> </a> 
-                  </td>
+                    <td>☁️ Cloud & Database</td>
+                    <td>
+                      <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://www.steerbridge.com/hs-fs/hubfs/Assets_2023/aws%20white%20transparent.png?width=400&height=259&name=aws%20white%20transparent.png" alt="aws" width="40" height="40"/> </a>
+<a href="https://azure.microsoft.com/en-us" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" alt="azure" width="40" height="40"/> </a>
+<a href="https://cloud.google.com/?hl=en" target="_blank" rel="noreferrer"> <img src="https://www.univio.com/wp-content/uploads/2023/07/GCP-Logo-sygnet-1.png" alt="gcp" width="40" height="40"/> </a>
+<a href="https://www.vmware.com/" target="_blank" rel="noreferrer"> <img src="https://www.cloudcomputing-news.net/wp-content/uploads/2022/02/vmware-logo.png" alt="vmwware" width="40" height="40"/> </a>
+<a href="https://www.mysql.com" target="_blank" rel="noreferrer"> <img src="https://cdn.clever-cloud.com/uploads/2023/03/mysql.svg" alt="mysql" width="40" height="40"/> </a>
+<a href="https://www.mongodb.com" target="_blank" rel="noreferrer"> <img src="https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png" alt="mongodb" width="40" height="40"/> </a>  
+                    </td>
                 </tr>
                 <tr>
-                  <td>🛠️ Tools</td>
-                  <td>
-                    <a href="https://www.linux.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a>
-                    <a href="https://ubuntu.com" target="_blank" rel="noreferrer"> <img src="https://cp.beget.com/shared/n1byxn-jiJ9JcOXKDHTsER-FivGDMS94/ubuntu.png" alt="ubuntu" width="40" height="40"/> </a>
-                    <a href="https://www.microsoft.com/en-us/windows" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Windows_logo_-_2012.svg/1024px-Windows_logo_-_2012.svg.png" alt="windows" width="40" height="40"/></a>
-                    <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a>
-                    <a href="https://about.gitlab.com" target="_blank" rel="noreferrer"> <img src="https://www.cloudservices.store/site/wp-content/uploads/2020/10/logo-extra-whitespace.png" alt="gitlab" width="40" height="40"/> </a>
-                    <a href="https://www.vim.org" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" alt="vim" width="40" height="40"/> </a>
-                    <a href="https://code.visualstudio.com" target="_blank" rel="noreferrer"> <img src="https://i0.wp.com/teech.com.br/wp-content/uploads/2020/01/VsCode.png?fit=512%2C512" alt="vscode" width="40" height="40"/> </a>
-                    <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask" width="40" height="40"/> </a>
-                    <a href="https://nginx.org/en/" target="_blank" rel="noreferrer"> <img src="https://cdn.iconscout.com/icon/free/png-512/free-nginx-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-2945048.png?f=webp&w=256" alt="nginx" width="40" height="40"/> </a>
-                    <a href="https://gunicorn.org/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/gunicorn-icon-2048x1245-14wjcllu.png" alt="gunicorn" width="40" height="40"/> </a>
-                    <a href="https://www.sonarsource.com/" target="_blank" rel="noreferrer"> <img src="https://adrianalonso.es/wp-content/uploads/2017/10/sonarlogo.png" alt="sonarqube" width="40" height="40"/> </a>
-                    <a href="https://snyk.io" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/12959162?s=280&v=4" alt="snyk" width="40" height="40"/> </a>
-                    <a href="https://www.wireshark.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Wireshark_icon_new.png/480px-Wireshark_icon_new.png" alt="wireshark" width="40" height="40"/> </a>
-                  </td>
+                    <td>🛠️ Tools</td>
+                    <td>
+                        <a href="https://www.linux.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a>
+<a href="https://ubuntu.com" target="_blank" rel="noreferrer"> <img src="https://cp.beget.com/shared/n1byxn-jiJ9JcOXKDHTsER-FivGDMS94/ubuntu.png" alt="ubuntu" width="40" height="40"/> </a>
+<a href="https://www.microsoft.com/en-us/windows" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Windows_logo_-_2012.svg/1024px-Windows_logo_-_2012.svg.png" alt="windows" width="40" height="40"/></a>
+<a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a>
+<a href="https://about.gitlab.com" target="_blank" rel="noreferrer"> <img src="https://www.cloudservices.store/site/wp-content/uploads/2020/10/logo-extra-whitespace.png" alt="gitlab" width="40" height="40"/> </a>
+<a href="https://www.vim.org" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" alt="vim" width="40" height="40"/> </a>
+<a href="https://code.visualstudio.com" target="_blank" rel="noreferrer"> <img src="https://i0.wp.com/teech.com.br/wp-content/uploads/2020/01/VsCode.png?fit=512%2C512" alt="vscode" width="40" height="40"/> </a>
+<a href="https://www.office.com" target="_blank" rel="noreferrer"> <img src="https://iconape.com/wp-content/png_logo_vector/microsoft-office-logo-2019-present.png" alt="msoffice" width="40" height="40"/> </a>
+<a href="https://www.office.com" target="_blank" rel="noreferrer"> <img src="https://www.nexustek.com/wp-content/uploads/2024/08/Microsoft_365_2022.svg.png" alt="msoffice" width="40" height="40"/> </a>
+<a href="https://nginx.org/en/" target="_blank" rel="noreferrer"> <img src="https://cdn.iconscout.com/icon/free/png-512/free-nginx-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-2945048.png?f=webp&w=256" alt="nginx" width="40" height="40"/> </a>
+<a href="https://gunicorn.org/" target="_blank" rel="noreferrer"> <img src="https://static-00.iconduck.com/assets.00/gunicorn-icon-2048x1245-14wjcllu.png" alt="gunicorn" width="40" height="40"/> </a>
+<a href="https://kafka.apache.org/" target="_blank" rel="noreferrer"> <img src="https://www.sentinelone.com/wp-content/uploads/2019/07/19130737/Kafka_use_cases_indicated_by_Kafka_logo_with_Scalyr_colors.png" alt="kafka" width="40" height="40"/> </a>
+<a href="https://zookeeper.apache.org/" target="_blank" rel="noreferrer"> <img src="https://dezyre.gumlet.io/files.dezyre.com/images/Tutorials/zookeeper_logo.png?w=360&dpr=2.6" alt="zookeeper" width="40" height="40"/> </a>
+<a href="https://www.sonarsource.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/sonarqube-1.svg" alt="sonarqube" width="40" height="40"/> </a>
+<a href="https://snyk.io" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/12959162?s=280&v=4" alt="snyk" width="40" height="40"/> </a>
+<a href="https://www.wireshark.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Wireshark_icon_new.png/480px-Wireshark_icon_new.png" alt="wireshark" width="40" height="40"/> </a>
+<a href="https://slack.com" target="_blank" rel="noreferrer"> <img src="https://www.steel-eye.com/hubfs/Slack%20Logo.png" alt="slack" width="40" height="40"/> </a>
+                    </td>
                 </tr>
                 <tr>
-                  <td>🎓 Certificates</td>
-                  <td>
-                    <a href="https://www.credly.com/badges/6479e509-b1a1-4fa6-897b-a9df93da6d7f/public_url" target="_blank" rel="noreferrer"> <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" alt="ccp" width="80" height="80"/> </a>
-                  </td>
+                    <td>🎓 Certificates</td>
+                    <td>
+                      <a href="https://www.credly.com/badges/6479e509-b1a1-4fa6-897b-a9df93da6d7f/public_url" target="_blank" rel="noreferrer"> <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" alt="ccp" width="80" height="80"/> </a>    
+                    </td>
                 </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+            </tbody>
+        </table>
+    </div>
+</section>
 
 <section id="projects" class="projects">
     <div class="project-card">
@@ -322,7 +325,7 @@
 </section>
 
 <footer class="footer">
-    <p>© 2024 Niv Zilberman. All Rights Reserved.</p>
+    <p>© 2024 Niv Zilberman. All Rights Reserved. <br><a href="mailto:niv@example.com">Contact Me</a></p>
 </footer>
 
 </body>
