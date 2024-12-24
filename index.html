@@ -94,7 +94,7 @@
       text-align: center;
     }
     .tool {
-      background: linear-gradient(45deg, #8000ff, #0088ff);
+      background: linear-gradient(45deg, #00ffff, #8000ff);
       font-size: 1.5em;
       font-weight: bold;
       margin-bottom: 10px;
@@ -138,41 +138,11 @@
       width: fit-content;
       margin-top: 10px;
       padding: 5px 10px;
-      background-color: #00ffff;
+      background: linear-gradient(45deg, #00ffff, #8000ff);
       color: black;
       border-radius: 5px;
-      transition: background-color 1s ease;
     }
     .project-card a:hover {
-      background-color: #8000ff;
-    }
-
-    /* Contact Form */
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      background-color: #1e1e2f;
-      border: 1px solid #00ffff;
-      color: #e0e0e0;
-      border-radius: 5px;
-    }
-    button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      background: linear-gradient(45deg, #00ffff, #8000ff);
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover {
       background: linear-gradient(45deg, #8000ff, #00ffff);
     }
 
@@ -306,6 +276,11 @@
         <h2 class="gradient-glow">Projects</h2>
         <div class="project-grid">
           <div class="project-card">
+            <h3>InfinityLabs - Final Project</h3>
+            <p>Fully on-prem architecture with variety of tools and following best practices.</p>
+            <a href="https://github.com/niv-devops/weather-webapp" target="_blank">View Project</a>
+          </div>
+          <div class="project-card">
             <h3>Weather WebApp</h3>
             <p>Simple CI/CD pipeline for a Python weather web application.</p>
             <a href="https://github.com/niv-devops/weather-webapp" target="_blank">View Project</a>
@@ -331,11 +306,6 @@
             <a href="https://github.com/niv-devops/python-lambda-api" target="_blank">View Project</a>
           </div>
           <div class="project-card">
-            <h3>Weather WebApp - ArgoCD</h3>
-            <p>Kubernetes manifests for weather WebApp deployment using ArgoCD and GitOps principles.</p>
-            <a href="https://github.com/niv-devops/webapp-argocd" target="_blank">View Project</a>
-          </div>
-          <div class="project-card">
             <h3>Python-MongoDB-Kafka-K8sD</h3>
             <p>Flask Python online shopping project using Apache Kafka for communication, MongoDB for data storage, K8's cluster and Helm for deployment.</p>
             <a href="https://github.com/niv-devops/python-mongodb-kafka" target="_blank">View Project</a>
@@ -351,18 +321,6 @@
             <a href="https://github.com/niv-devops/tf-k8s-jenkins" target="_blank">View Project</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2 class="gradient-glow">Get in Touch</h2>
-        <form>
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-          <textarea placeholder="Message" rows="5" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
       </div>
     </section>
   </main>
