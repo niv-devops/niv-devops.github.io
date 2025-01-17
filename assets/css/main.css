@@ -1573,7 +1573,7 @@ input, select, textarea {
 		  }
 		  .tool {
 			background: linear-gradient(45deg, #00ffff, #8000ff);
-			font-size: 1em;
+			font-size: 1.3em;
 			color: black;
 			font-weight: bold;
 			margin-bottom: 30px;
@@ -1607,7 +1607,7 @@ input, select, textarea {
 			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 			display: flex;
 			flex-direction: column;
-			font-size: 0.8em;
+			font-size: 1em;
 			justify-content: space-between;
 			backdrop-filter: blur(12px);
 			border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1619,7 +1619,7 @@ input, select, textarea {
 			margin-bottom: 5px;
 			color: #ff0080;
 			text-shadow: 0 0 1px #ff0080, 0 0 16px #ff0080;
-			font-size: 1.1em;
+			font-size: 1.3em;
 			align-items: center;
 		  }	  
 		  .project-card a {
@@ -1633,6 +1633,7 @@ input, select, textarea {
 			line-height: 2.5;
 			text-decoration: none;
 			align-self: center;
+			font-size: 1em;
 		  }	  
 		  .project-card a:hover {
 			background: linear-gradient(45deg, #00ffff, #8000ff);
@@ -2246,7 +2247,7 @@ input, select, textarea {
 
 					#main > .panel.intro header p {
 						letter-spacing: -0.015em;
-						font-size: 1em;
+						font-size: 1.1em;
 						margin: 0.5em 0 1em 0;
 						color: white;
 					}
@@ -2296,7 +2297,7 @@ input, select, textarea {
 		color: rgba(255, 255, 255, 0.45);
 		text-align: center;
 		padding: 2em 0 0 0;
-		font-size: 0.75em;
+		font-size: 0.8em;
 	}
 
 		#footer a {
