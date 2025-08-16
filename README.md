@@ -1,5 +1,9 @@
 # My Personal Website
 
+<div align="center">
+	<img src="./assets/favicon_io/favicon.png" alt="Favicon" height="300" width="auto">
+</div>
+
 Welcome to my personal website! This site serves as a showcase of my skills, projects, and experiences. Here you can find information about who I am, what I do, and how to get in touch. https://niv-devops.github.io
 
 ## Features
