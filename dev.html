@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niv Zilberman - DevOps Engineer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <title>Alex Chen - DevOps Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset and Base Styles */
@@ -204,7 +204,7 @@
         }
 
         .hero-title {
-            font-size: 3.0rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.2;
@@ -539,13 +539,6 @@
             transform: translateY(-2px);
         }
 
-        .skill-icon {
-            width: 1.5em;
-            height: 1.5em;  
-            object-fit: contain;
-            display: block;
-        }
-
         /* Projects Section */
         .projects {
             background: rgba(255, 255, 255, 0.02);
@@ -581,7 +574,7 @@
 
         .project-image img {
             width: 100%;
-            height: 300px;
+            height: 200px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -653,32 +646,19 @@
         }
 
         .project-tech {
-            align-items: center;
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            justify-content: center;
         }
 
         .project-tech span {
-            align-items: center;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             color: var(--primary-color);
-            justify-content: center;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.8rem;
             border: 1px solid var(--glass-border);
-        }
-
-        .projects-grid .project-card:first-child {
-            grid-column: 1 / -1;
-        }
-
-        .projects-grid .project-card:first-child .project-image img {
-            height: 250px;
-            object-position: top center;
         }
 
         /* Resume Section */
@@ -839,11 +819,8 @@
         }
 
         .skill-tag {
-            align-items: center;
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-secondary);
-            display: inline-flex;
-            gap: 6px;
             padding: 0.2rem 0.6rem;
             border-radius: 10px;
             font-size: 0.8rem;
@@ -1133,21 +1110,517 @@
         .floating {
             animation: float 3s ease-in-out infinite;
         }
+
+/* DevOps Infinity Loop Animation Section */
+.workflow {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.workflow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.workflow-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.workflow-container {
+    position: relative;
+    z-index: 2;
+}
+
+.workflow-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.workflow-btn {
+    min-width: 150px;
+}
+
+.workflow-speed {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+}
+
+.workflow-speed input[type="range"] {
+    width: 100px;
+    accent-color: var(--primary-color);
+}
+
+/* Infinity Loop Container */
+.infinity-loop-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SVG Infinity Path - Perfect Mathematical Infinity */
+.infinity-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    z-index: 1;
+}
+
+.infinity-track {
+    fill: none;
+    stroke: rgba(0, 212, 255, 0.4);
+    stroke-width: 3;
+    stroke-dasharray: 15, 10;
+    animation: dashMove 4s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+}
+
+@keyframes dashMove {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 25; }
+}
+
+/* Dev and Ops Labels */
+.loop-label {
+    position: absolute;
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    padding: 1.2rem 2.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.dev-label {
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 212, 255, 0.05));
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.ops-label {
+    top: 50%;
+    right: 15%;
+    transform: translate(50%, -50%);
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(78, 205, 196, 0.05));
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Tool Stages positioned precisely on the infinity path */
+.workflow-stage-infinity {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.workflow-stage-infinity.active {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+    transform: scale(1.15);
+    animation: stagePulse 2s ease-in-out infinite;
+}
+
+.workflow-stage-infinity.completed {
+    background: rgba(78, 205, 196, 0.15);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(78, 205, 196, 0.4);
+}
+
+@keyframes stagePulse {
+    0%, 100% { 
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+        transform: scale(1.15);
+    }
+    50% { 
+        box-shadow: 0 0 50px rgba(0, 212, 255, 0.8);
+        transform: scale(1.2);
+    }
+}
+
+.tool-logo {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    object-fit: contain;
+    background: white;
+    padding: 2px;
+}
+
+.stage-name {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.workflow-stage-infinity.active .stage-name {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Perfect Mathematical Positioning on Infinity Symbol */
+/* Using parametric equations for infinity: x = a*cos(t)/(1+sin²(t)), y = a*sin(t)*cos(t)/(1+sin²(t)) */
+
+.workflow-stage-infinity:nth-child(1) { /* Plan - Top of left loop */
+    top: 25%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.workflow-stage-infinity:nth-child(2) { /* Code - Center crossing */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.workflow-stage-infinity:nth-child(3) { /* Build - Top of right loop */
+    top: 25%;
+    right: 30%;
+    transform: translate(50%, -50%);
+}
+
+.workflow-stage-infinity:nth-child(4) { /* Test - Right side */
+    top: 50%;
+    right: 20%;
+    transform: translate(50%, -50%);
+}
+
+.workflow-stage-infinity:nth-child(5) { /* Deploy - Bottom of right loop */
+    bottom: 25%;
+    right: 30%;
+    transform: translate(50%, 50%);
+}
+
+.workflow-stage-infinity:nth-child(6) { /* Monitor - Center crossing (bottom) */
+    bottom: 35%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.workflow-stage-infinity:nth-child(7) { /* Operate - Bottom of left loop */
+    bottom: 25%;
+    left: 30%;
+    transform: translate(-50%, 50%);
+}
+
+.workflow-stage-infinity:nth-child(8) { /* Feedback - Left side */
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+/* Flow particles following perfect infinity path */
+.flow-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--primary-color);
+    opacity: 0;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+}
+
+.flow-particle.active {
+    opacity: 1;
+    animation: flowInfinityPerfect 12s linear infinite;
+}
+
+.flow-particle:nth-child(2) {
+    animation-delay: 3s;
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+.flow-particle:nth-child(3) {
+    animation-delay: 6s;
+}
+
+.flow-particle:nth-child(4) {
+    animation-delay: 9s;
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Perfect infinity path animation using mathematical precision */
+@keyframes flowInfinityPerfect {
+    0% { 
+        transform: translate(-50%, -50%) translateX(0px) translateY(0px);
+    }
+    12.5% { 
+        transform: translate(-50%, -50%) translateX(-120px) translateY(-100px);
+    }
+    25% { 
+        transform: translate(-50%, -50%) translateX(0px) translateY(0px);
+    }
+    37.5% { 
+        transform: translate(-50%, -50%) translateX(120px) translateY(-100px);
+    }
+    50% { 
+        transform: translate(-50%, -50%) translateX(200px) translateY(0px);
+    }
+    62.5% { 
+        transform: translate(-50%, -50%) translateX(120px) translateY(100px);
+    }
+    75% { 
+        transform: translate(-50%, -50%) translateX(0px) translateY(0px);
+    }
+    87.5% { 
+        transform: translate(-50%, -50%) translateX(-120px) translateY(100px);
+    }
+    100% { 
+        transform: translate(-50%, -50%) translateX(-200px) translateY(0px);
+    }
+}
+
+.stage-tooltip {
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 15;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.workflow-stage-infinity:hover .stage-tooltip {
+    opacity: 1;
+}
+
+.workflow-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.workflow-terminal {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.workflow-terminal .terminal-body {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.workflow-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.metric-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-primary);
+    font-size: 1.2rem;
+}
+
+.metric-content {
+    flex: 1;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design for Workflow */
+@media (max-width: 768px) {
+    .workflow-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .infinity-path {
+        width: 500px;
+        height: 250px;
+    }
+    
+    .infinity-loop-container {
+        height: 400px;
+    }
+    
+    .workflow-stage-infinity {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .tool-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .stage-name {
+        font-size: 0.55rem;
+    }
+    
+    .loop-label {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+    
+    .workflow-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .workflow-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Adjust mobile infinity animation */
+    @keyframes flowInfinityPerfect {
+        0% { 
+            transform: translate(-50%, -50%) translateX(0px) translateY(0px);
+        }
+        12.5% { 
+            transform: translate(-50%, -50%) translateX(-80px) translateY(-60px);
+        }
+        25% { 
+            transform: translate(-50%, -50%) translateX(0px) translateY(0px);
+        }
+        37.5% { 
+            transform: translate(-50%, -50%) translateX(80px) translateY(-60px);
+        }
+        50% { 
+            transform: translate(-50%, -50%) translateX(130px) translateY(0px);
+        }
+        62.5% { 
+            transform: translate(-50%, -50%) translateX(80px) translateY(60px);
+        }
+        75% { 
+            transform: translate(-50%, -50%) translateX(0px) translateY(0px);
+        }
+        87.5% { 
+            transform: translate(-50%, -50%) translateX(-80px) translateY(60px);
+        }
+        100% { 
+            transform: translate(-50%, -50%) translateX(-130px) translateY(0px);
+        }
+    }
+}
+
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+     Navigation 
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">Niv Zilberman</span>
+                <span class="logo-text">AC</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#workflow" class="nav-link">DevOps Flow</a></li>
                 <li><a href="#resume" class="nav-link">Resume</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="theme-toggle">
                 <i class="fas fa-moon"></i>
@@ -1160,12 +1633,12 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+     Hero Section 
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Niv Zilberman</span>
+                    Hi, I'm <span class="gradient-text">Alex Chen</span>
                 </h1>
                 <div class="hero-subtitle">
                     <span class="typing-text"></span>
@@ -1176,27 +1649,23 @@
                     I build scalable systems that empower development teams to ship faster and more reliably.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fa-solid fa-code-branch"></i>View Projects</a>
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#resume" class="btn btn-secondary">
                         <i class="fas fa-user"></i> View Resume
                     </a>
                 </div>
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/niv-zilberman" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/niv-devops" target="_blank" aria-label="GitHub">
+                    <a href="https://github.com/alexchen" target="_blank" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://gitlab.com/realgoofy" target="_blank" aria-label="GitLab">
-                        <i class="fa-brands fa-gitlab"></i>
+                    <a href="https://linkedin.com/in/alexchen" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://hub.docker.com/u/devopsgoofy" target="_blank" aria-label="Docker Hub">
+                    <a href="https://hub.docker.com/u/alexchen" target="_blank" aria-label="Docker Hub">
                         <i class="fab fa-docker"></i>
                     </a>
-                    <a href="https://artifacthub.io/packages/search?user=goofy&sort=relevance&page=1" target="_blank" aria-label="Artifact Hub">
-                        <i class="fa-solid fa-dharmachakra"></i>
+                    <a href="https://twitter.com/alexchen" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
             </div>
@@ -1208,29 +1677,29 @@
                             <span class="btn-minimize"></span>
                             <span class="btn-maximize"></span>
                         </div>
-                        <span class="terminal-title">🛸 niv@devops:~/vibe-coding $</span>
+                        <span class="terminal-title">alex@devops:~$</span>
                     </div>
                     <div class="terminal-body">
                         <div class="terminal-line">
-                            <span class="prompt">$</span> kubectl get pods
+                            <span class="prompt">$</span> kubectl get pods --all-namespaces
                         </div>
                         <div class="terminal-line">
                             <span class="success">NAMESPACE     NAME                    READY   STATUS</span>
                         </div>
                         <div class="terminal-line">
-                            <span class="success">hold-my-beer   this-is-fine-558bd4d5db-x7gvn   1/1     Running</span>
+                            <span class="success">kube-system   coredns-558bd4d5db-x7gvn   1/1     Running</span>
                         </div>
                         <div class="terminal-line">
                             <span class="prompt">$</span> docker ps
                         </div>
                         <div class="terminal-line">
-                            <span class="success">CONTAINER ID      IMAGE       STATUS</span>
+                            <span class="success">CONTAINER ID   IMAGE     STATUS</span>
                         </div>
                         <div class="terminal-line">
-                            <span class="success">a1b2c3d4e5f6   works-on-my-machine     Up 2 hours</span>
+                            <span class="success">a1b2c3d4e5f6   nginx     Up 2 hours</span>
                         </div>
                         <div class="terminal-line">
-                            <span class="prompt">$ </span> sudo rm -rf / <span class="cursor-blink">_</span>
+                            <span class="prompt">$</span> <span class="cursor-blink">_</span>
                         </div>
                     </div>
                 </div>
@@ -1238,20 +1707,20 @@
         </div>
     </section>
 
-    <!-- About Section -->
+     About Section 
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a DevOps Engineer with experience in building and maintaining scalable cloud infrastructure. 
+                        I'm a DevOps Engineer with 5+ years of experience in building and maintaining scalable cloud infrastructure. 
                         My passion lies in automating complex processes, optimizing system performance, and creating robust CI/CD pipelines 
-                        that also focus the cost aspect of the infrastructure (FinOps).
+                        that enable teams to deliver high-quality software at scale.
                     </p>
-                    <p>On my free time I do thing related to technology <i class="fa-solid fa-microchip"></i>, math <i class="fa-solid fa-calculator"></i>,
-						football <i class="fa-solid fa-football"></i> (Go Broncos! <img src="images/broncos.avif" alt="Broncos Logo" style="height: 1em; vertical-align: middle;"/>), astronomy <i class="fa-solid fa-user-astronaut"></i>,
-						books <i class="fa-solid fa-book"></i> and a fine whiskey <i class="fa-solid fa-whiskey-glass"></i> (recommendations are more than welcome 🥃).
+                    <p>
+                        I specialize in cloud-native technologies, containerization, and infrastructure as code. 
+                        I believe in the power of automation to solve complex problems and improve developer productivity.
                     </p>
                     <div class="stats">
                         <div class="stat">
@@ -1259,18 +1728,18 @@
                             <p>Projects Deployed</p>
                         </div>
                         <div class="stat">
-                            <h3>90%</h3>
-                            <p>Sarcastic</p>
+                            <h3>99.9%</h3>
+                            <p>Uptime Achieved</p>
                         </div>
                         <div class="stat">
-                            <h3>2+</h3>
+                            <h3>5+</h3>
                             <p>Years Experience</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
                     <div class="image-container">
-                        <img src="./images/me.jpg" alt="DevOpsNaut">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Alex Chen">
                         <div class="image-overlay"></div>
                     </div>
                 </div>
@@ -1278,7 +1747,7 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+     Skills Section 
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">Tech Stack & Tools</h2>
@@ -1286,435 +1755,166 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
                     <div class="skill-items">
-                        <span class="skill-item"><i class="fa-brands fa-aws fa-2xl"></i></span>
-                        <span class="skill-item"><img src="images/gcp.png" alt="GCP" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/azure.png" alt="Azure" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/openshift.png" alt="openshift" class="skill-icon"></span>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Azure</span>
+                        <span class="skill-item">Google Cloud</span>
+                        <span class="skill-item">DigitalOcean</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-cube"></i> Containerization</h3>
                     <div class="skill-items">
-                        <span class="skill-item"><i class="fa-brands fa-docker fa-2xl"></i></span>
-                        <span class="skill-item"><img src="images/kubernetes.png" alt="Kubernetes" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/helm.png" alt="Helm" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/istio.png" alt="Istio" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/podman.png" alt="Podman" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/sonarqube.png" alt="Kafka" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/snyk.svg" alt="Snyk" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/chaosmonkey.png" alt="chaosMoneky" class="skill-icon"></span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Helm</span>
+                        <span class="skill-item">Podman</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-code-branch"></i> CI/CD</h3>
                     <div class="skill-items">
-                        <span class="skill-item"><i class="fa-brands fa-git-alt fa-2xl"></i></span>
-                        <span class="skill-item"><i class="fa-brands fa-github fa-2xl"></i></span>
-                        <span class="skill-item"><i class="fa-brands fa-gitlab fa-2xl"></i></span>
-                        <span class="skill-item"><i class="fa-brands fa-jenkins fa-2xl"></i></span>
-                        <span class="skill-item"><img src="images/gha.png" alt="GitHub Actions" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/circleci.png" alt="CircleCI" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/argocd.png" alt="ArgoCD" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/jfrog.png" alt="jfrog" class="skill-icon"></span>
+                        <span class="skill-item">Jenkins</span>
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">GitLab CI</span>
+                        <span class="skill-item">ArgoCD</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-server"></i> Infrastructure</h3>
                     <div class="skill-items">
-                        <span class="skill-item"><img src="images/ansible.png" alt="Ansible" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/terraform.png" alt="Terraform" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/sql.png" alt="SQL" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/vba.png" alt="VBA" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/mongodb.png" alt="MongoDB" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/nginx.png" alt="Nginx" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/kafka.png" alt="Kafka" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/vault.png" alt="Vault" class="skill-icon"></span>
+                        <span class="skill-item">Terraform</span>
+                        <span class="skill-item">Ansible</span>
+                        <span class="skill-item">Pulumi</span>
+                        <span class="skill-item">CloudFormation</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Monitoring</h3>
+                    <h3><i class="fas fa-chart-line"></i> Monitoring</h3>
                     <div class="skill-items">
-                        <span class="skill-item"><img src="images/prometheus.png" alt="Prometheus" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/grafana.png" alt="Grafana" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/elkstack.png" alt="ELK Stack" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/datadog.png" alt="DataDog" class="skill-icon"></span>
-                        <span class="skill-item"><i class="fa-brands fa-slack fa-2xl"></i></span>
-                        <span class="skill-item"><img src="images/wireshark.png" alt="WireShark" class="skill-icon"></span>
+                        <span class="skill-item">Prometheus</span>
+                        <span class="skill-item">Grafana</span>
+                        <span class="skill-item">ELK Stack</span>
+                        <span class="skill-item">Datadog</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-terminal"></i> Languages</h3>
                     <div class="skill-items">
-                        <span class="skill-item"><img src="images/bash.png" alt="Bash" class="skill-icon"></span>
-                        <span class="skill-item"><i class="fa-brands fa-python fa-2xl"></i></span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Bash</span>
+                        <span class="skill-item">Go</span>
                         <span class="skill-item">YAML</span>
-                        <span class="skill-item"><i class="fa-brands fa-golang fa-2xl"></i></span>
-                        <span class="skill-item">Groovy</span>
-                        <span class="skill-item"><i class="fa-brands fa-c fa-2xl"></i></span>
-                        <span class="skill-item"><i class="fa-brands fa-java fa-2xl"></i></span>
-                        <span class="skill-item"><i class="fa-brands fa-html5 fa-2xl"></i></span>
-                        <span class="skill-item"><i class="fa-brands fa-css3-alt fa-2xl"></i></span>
-                        <span class="skill-item"><i class="fa-brands fa-js fa-2xl"></i></span>
-                        <span class="skill-item"><img src="images/r.png" alt="R" class="skill-icon"></span>
-                        <span class="skill-item"><img src="images/sas.png" alt="SAS" class="skill-icon"></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+     Projects Section 
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/ilrd.png" alt="InfinityLabs">
+                        <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=350&h=200&fit=crop" alt="K8s Auto-Scaler">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/niv-devops/hdo3-devops" target="_blank">
+                                <a href="https://github.com/alexchen/k8s-autoscaler" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://github.com/niv-devops/InfinityLabs" target="_blank">
-                                    <i class="fab fa-github"></i>
+                                <a href="https://demo.k8s-autoscaler.com" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>InfinityLabs - HDO3</h3>
-                        <p>Fully on-prem architecture with variety of tools and following best practices.</p>
+                        <h3>Kubernetes Auto-Scaler</h3>
+                        <p>Custom horizontal pod autoscaler with predictive scaling based on historical metrics and machine learning algorithms.</p>
                         <div class="project-tech">
-                            <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25?logo=gnubash&logoColor=fff&style=plastic" alt="GNU Bash Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=plastic" alt="Python Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=fff&style=plastic" alt="Go Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Apache%20Groovy-4298B8?logo=apachegroovy&logoColor=fff&style=plastic" alt="Apache Groovy Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=fff&style=plastic" alt="C Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=plastic" alt="HTML5 Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=plastic" alt="CSS Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=plastic" alt="JavaScript Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=plastic" alt="Git Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=fff&style=plastic" alt="GitLab Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=plastic" alt="GitHub Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=plastic" alt="GitHub Actions Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Jenkins-D24939?logo=jenkins&logoColor=fff&style=plastic" alt="Jenkins Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/CircleCI-343434?logo=circleci&logoColor=fff&style=plastic" alt="CircleCI Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Argo-EF7B4D?logo=argo&logoColor=fff&style=plastic" alt="Argo Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/JFrog-40BE46?logo=jfrog&logoColor=fff&style=plastic" alt="JFrog Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Artifact%20Hub-417598?logo=artifacthub&logoColor=fff&style=plastic" alt="Artifact Hub Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=fff&style=plastic" alt="Kubernetes Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=fff&style=plastic" alt="Helm Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Istio-466BB0?logo=istio&logoColor=fff&style=plastic" alt="Istio Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Ansible-E00?logo=ansible&logoColor=fff&style=plastic" alt="Ansible Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=plastic" alt="Terraform Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=fff&style=plastic" alt="Prometheus Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=fff&style=plastic" alt="Grafana Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Elasticsearch-005571?logo=elasticsearch&logoColor=fff&style=plastic" alt="Elasticsearch Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Logstash-005571?logo=logstash&logoColor=fff&style=plastic" alt="Logstash Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kibana-005571?logo=kibana&logoColor=fff&style=plastic" alt="Kibana Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Vault-FFEC6E?logo=vault&logoColor=000&style=plastic" alt="Vault Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/NGINX-009639?logo=nginx&logoColor=fff&style=plastic" alt="NGINX Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/SonarQube%20Server-126ED3?logo=sonarqubeserver&logoColor=fff&style=plastic" alt="SonarQube Server Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=fff&style=plastic" alt="MongoDB Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=fff&style=plastic" alt="Slack Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Wireshark-1679A7?logo=wireshark&logoColor=fff&style=plastic" alt="Wireshark Badge" height="22" width="auto">
+                            <span>Kubernetes</span>
+                            <span>Go</span>
+                            <span>Prometheus</span>
+                            <span>Python</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/thunderCast.png" alt="ThunderCast">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=350&h=200&fit=crop" alt="Multi-Cloud CI/CD">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/niv-devops/weather-webapp" target="_blank">
+                                <a href="https://github.com/alexchen/multicloud-cicd" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://hub.docker.com/r/devopsgoofy/weather-webapp" target="_blank">
+                                <a href="https://hub.docker.com/r/alexchen/cicd-toolkit" target="_blank">
                                     <i class="fab fa-docker"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>ThunderCast - Weather WebApp</h3>
-                        <p>Full CI/CD and DevOps pipeline for a Python weather web application.</p>
+                        <h3>Multi-Cloud CI/CD Pipeline</h3>
+                        <p>Unified deployment pipeline supporting AWS, Azure, and GCP with automated testing, security scanning, and rollback capabilities.</p>
                         <div class="project-tech">
-                            <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25?logo=gnubash&logoColor=fff&style=plastic" alt="GNU Bash Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=plastic" alt="Python Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=plastic" alt="HTML5 Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=plastic" alt="CSS Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=plastic" alt="JavaScript Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=fff&style=plastic" alt="GitLab Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=plastic" alt="GitHub Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=plastic" alt="GitHub Actions Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Jenkins-D24939?logo=jenkins&logoColor=fff&style=plastic" alt="Jenkins Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/JFrog-40BE46?logo=jfrog&logoColor=fff&style=plastic" alt="JFrog Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Artifact%20Hub-417598?logo=artifacthub&logoColor=fff&style=plastic" alt="Artifact Hub Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=fff&style=plastic" alt="Kubernetes Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=fff&style=plastic" alt="Helm Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Ansible-E00?logo=ansible&logoColor=fff&style=plastic" alt="Ansible Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=plastic" alt="Terraform Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=fff&style=plastic" alt="Prometheus Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=fff&style=plastic" alt="Grafana Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Elasticsearch-005571?logo=elasticsearch&logoColor=fff&style=plastic" alt="Elasticsearch Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Logstash-005571?logo=logstash&logoColor=fff&style=plastic" alt="Logstash Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kibana-005571?logo=kibana&logoColor=fff&style=plastic" alt="Kibana Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/NGINX-009639?logo=nginx&logoColor=fff&style=plastic" alt="NGINX Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/SonarQube%20Server-126ED3?logo=sonarqubeserver&logoColor=fff&style=plastic" alt="SonarQube Server Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=fff&style=plastic" alt="Slack Badge" height="22" width="auto">
+                            <span>Jenkins</span>
+                            <span>Terraform</span>
+                            <span>Docker</span>
+                            <span>AWS</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/hepheastack.png" alt="HepheaStack">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=350&h=200&fit=crop" alt="Infrastructure Monitor">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/niv-devops/platform-engineering" target="_blank">
+                                <a href="https://github.com/alexchen/infra-monitor" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://hub.docker.com/r/devopsgoofy/k8s-platform" target="_blank">
-                                    <i class="fab fa-docker"></i>
-                                </a>
-                                <a href="https://github.com/niv-devops/terraform-platform" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://hub.docker.com/r/devopsgoofy/terraform-platform" target="_blank">
-                                    <i class="fab fa-docker"></i>
-                                </a>
-                                <a href="https://artifacthub.io/packages/helm/goofy-chart/platform" target="_blank">
-                                    <i class="fa-solid fa-dharmachakra"></i>
+                                <a href="https://monitor.alexchen.dev" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>HepheaStack - K8's & TF Platform Engineering</h3>
-                        <p>Platform engineering project - Dashboards to view and manage Kubernetes & Terraform resources.</p>
+                        <h3>Infrastructure Monitoring Suite</h3>
+                        <p>Comprehensive monitoring solution with custom dashboards, alerting, and automated incident response workflows.</p>
                         <div class="project-tech">
-                            <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=plastic" alt="Python Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=plastic" alt="HTML5 Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=plastic" alt="CSS Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=plastic" alt="JavaScript Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=plastic" alt="TypeScript Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Argo-EF7B4D?logo=argo&logoColor=fff&style=plastic" alt="Argo Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=fff&style=plastic" alt="Kubernetes Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=fff&style=plastic" alt="Helm Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Istio-466BB0?logo=istio&logoColor=fff&style=plastic" alt="Istio Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=plastic" alt="Terraform Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=fff&style=plastic" alt="Grafana Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Vault-FFEC6E?logo=vault&logoColor=000&style=plastic" alt="Vault Badge" height="22" width="auto">
+                            <span>Grafana</span>
+                            <span>Prometheus</span>
+                            <span>AlertManager</span>
+                            <span>Python</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/plutusCloud.png" alt="PlutusCloud">
+                        <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=350&h=200&fit=crop" alt="Serverless Framework">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/niv-devops/FinOps" target="_blank">
+                                <a href="https://github.com/alexchen/serverless-toolkit" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://hub.docker.com/r/devopsgoofy/finops-platform" target="_blank">
-                                    <i class="fab fa-docker"></i>
+                                <a href="https://serverless.alexchen.dev" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>PlutusCloud - FinOps platform</h3>
-                        <p>Financial Operations - Cloud Cost Dashboard & Kubernetes Resources Analysis.</p>
+                        <h3>Serverless Deployment Toolkit</h3>
+                        <p>Framework for deploying and managing serverless applications across multiple cloud providers with unified configuration.</p>
                         <div class="project-tech">
-                            <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?logo=googlecloud&logoColor=fff&style=for-the-badge" alt="Google Cloud Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=plastic" alt="Python Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=plastic" alt="TypeScript Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=fff&style=plastic" alt="Kubernetes Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=fff&style=plastic" alt="Helm Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Istio-466BB0?logo=istio&logoColor=fff&style=plastic" alt="Istio Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Argo-EF7B4D?logo=argo&logoColor=fff&style=plastic" alt="Argo Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=plastic" alt="Terraform Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=fff&style=plastic" alt="Grafana Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Vault-FFEC6E?logo=vault&logoColor=000&style=plastic" alt="Vault Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=fff&style=plastic" alt="Slack Badge" height="22" width="auto">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/devops-exercises.png" alt="DevOps-Exercises">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/niv-devops/devops-exercises" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>DevOps Exercises</h3>
-                        <p>Learning best practices via DevOps roadmap and home assignments.</p>
-                        <div class="project-tech">
-                            <img src="https://img.shields.io/badge/.ENV-ECD53F?logo=dotenv&logoColor=000&style=plastic" alt=".ENV Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?logo=googlecloud&logoColor=fff&style=for-the-badge" alt="Google Cloud Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25?logo=gnubash&logoColor=fff&style=plastic" alt="GNU Bash Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=plastic" alt="Git Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=plastic" alt="GitHub Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=plastic" alt="GitHub Actions Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=fff&style=plastic" alt="Kubernetes Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Ansible-E00?logo=ansible&logoColor=fff&style=plastic" alt="Ansible Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=plastic" alt="Terraform Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/NGINX-009639?logo=nginx&logoColor=fff&style=plastic" alt="NGINX Badge" height="22" width="auto">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/circleCI-argoCD.png" alt="CircleCI-ArgoCD">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/niv-devops/circleCI-argoCD" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>CircleCI - ArgoCD</h3>
-                        <p>Full CI/CD pipeline for Terraform infrastructure testing and application deployment.</p>
-                        <div class="project-tech">
-                            <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=plastic" alt="Python Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=plastic" alt="Git Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/CircleCI-343434?logo=circleci&logoColor=fff&style=plastic" alt="CircleCI Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Argo-EF7B4D?logo=argo&logoColor=fff&style=plastic" alt="Argo Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=fff&style=plastic" alt="Kubernetes Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=fff&style=plastic" alt="Helm Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=plastic" alt="Terraform Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/OpenTofu-FFDA18?logo=opentofu&logoColor=000&style=plastic" alt="OpenTofu Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Vault-FFEC6E?logo=vault&logoColor=000&style=plastic" alt="Vault Badge" height="22" width="auto">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/broncos-webapp.png" alt="Broncos Shop WebApp">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/niv-devops/python-mongodb-kafka" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://hub.docker.com/r/devopsgoofy/kafka-python" target="_blank">
-                                    <i class="fab fa-docker"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Shopping WebApp - Database & Streaming</h3>
-                        <p>eShop WebApp built with Python that uses MongoDB (data) and Kafka (transactions).</p>
-                        <div class="project-tech">
-                            <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=plastic" alt="Python Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=plastic" alt="GitHub Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=plastic" alt="GitHub Actions Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=fff&style=plastic" alt="Kubernetes Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=fff&style=plastic" alt="Helm Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=fff&style=plastic" alt="MongoDB Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?logo=apachekafka&logoColor=fff&style=for-the-badge" alt="Apache Kafka Badge" height="22" width="auto">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="" alt="Azure DevOps .NET">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/niv-devops/azure-devops-dotnet" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Azure DevOps - .NET App</h3>
-                        <p>Using Azure DevOps for a .NET app's CI/CD pipeline.</p>
-                        <div class="project-tech">
-                            <img src="https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=fff&style=plastic" alt=".NET Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/NuGet-004880?logo=nuget&logoColor=fff&style=plastic" alt="NuGet Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25?logo=gnubash&logoColor=fff&style=plastic" alt="GNU Bash Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=plastic" alt="GitHub Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/SonarQube%20Server-126ED3?logo=sonarqubeserver&logoColor=fff&style=plastic" alt="SonarQube Server Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=fff&style=plastic" alt="Slack Badge" height="22" width="auto">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="" alt="Terraform - EKS">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/niv-devops/eks-terraform-python-rest-api" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Terraform - EKS</h3>
-                        <p>Python Rest API application deployment on AWS EKS provisioned with Terraform.</p>
-                        <div class="project-tech">
-                            <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=plastic" alt="Python Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=fff&style=plastic" alt="Go Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=fff&style=plastic" alt="Kubernetes Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=plastic" alt="Terraform Badge" height="22" width="auto">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="" alt="Lambda Functions API">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/niv-devops/python-lambda-api" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://hub.docker.com/r/devopsgoofy/python-lambda-api" target="_blank">
-                                    <i class="fab fa-docker"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Lambda Functions API WebApp</h3>
-                        <p>A web app for AWS Lambda functions triggering.</p>
-                        <div class="project-tech">
-                            <img src="https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=fff&style=plastic" alt="Ubuntu Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=plastic" alt="Python Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/JSON-000?logo=json&logoColor=fff&style=plastic" alt="JSON Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=plastic" alt="HTML5 Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=plastic" alt="Git Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=fff&style=plastic" alt="GitLab Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=plastic" alt="GitHub Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Jenkins-D24939?logo=jenkins&logoColor=fff&style=plastic" alt="Jenkins Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=plastic" alt="Docker Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=fff&style=plastic" alt="Slack Badge" height="22" width="auto">
-                            <img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=fff&style=plastic" alt="WhatsApp Badge" height="22" width="auto">
+                            <span>AWS Lambda</span>
+                            <span>Serverless</span>
+                            <span>Node.js</span>
+                            <span>CloudFormation</span>
                         </div>
                     </div>
                 </div>
@@ -1722,7 +1922,162 @@
         </div>
     </section>
 
-    <!-- Resume Section -->
+     DevOps Infinity Loop Animation Section 
+<section id="workflow" class="workflow">
+    <div class="container">
+        <h2 class="section-title">DevOps Infinity Loop</h2>
+        <p class="workflow-subtitle">Experience the continuous integration and delivery cycle that never ends</p>
+        
+        <div class="workflow-container">
+             Workflow Controls 
+            <div class="workflow-controls">
+                <button class="btn btn-primary workflow-btn" id="startWorkflow">
+                    <i class="fas fa-play"></i> Start Loop
+                </button>
+                <button class="btn btn-secondary workflow-btn" id="pauseWorkflow">
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button class="btn btn-secondary workflow-btn" id="resetWorkflow">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+                <div class="workflow-speed">
+                    <label>Speed:</label>
+                    <input type="range" id="speedControl" min="0.5" max="3" step="0.5" value="1">
+                    <span id="speedValue">1x</span>
+                </div>
+            </div>
+
+             Infinity Loop Visualization 
+            <div class="infinity-loop-container">
+                 SVG Infinity Path 
+                <svg class="infinity-path" viewBox="0 0 800 400">
+                    <path class="infinity-track" d="M 200,200 C 200,100 300,100 400,200 C 500,300 600,300 600,200 C 600,100 500,100 400,200 C 300,300 200,300 200,200 Z"/>
+                </svg>
+                
+                 Dev and Ops Labels 
+                <div class="loop-label dev-label">DEV</div>
+                <div class="loop-label ops-label">OPS</div>
+                
+                 Tool Stages positioned along the infinity loop 
+                <div class="workflow-stage-infinity" data-stage="0">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira" class="tool-logo">
+                    <div class="stage-name">Plan</div>
+                    <div class="stage-tooltip">Jira • Confluence • Planning</div>
+                </div>
+                
+                <div class="workflow-stage-infinity" data-stage="1">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tool-logo">
+                    <div class="stage-name">Code</div>
+                    <div class="stage-tooltip">Git • VS Code • GitHub</div>
+                </div>
+                
+                <div class="workflow-stage-infinity" data-stage="2">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" class="tool-logo">
+                    <div class="stage-name">Build</div>
+                    <div class="stage-tooltip">Jenkins • Maven • Gradle</div>
+                </div>
+                
+                <div class="workflow-stage-infinity" data-stage="3">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original.svg" alt="Testing" class="tool-logo">
+                    <div class="stage-name">Test</div>
+                    <div class="stage-tooltip">Jest • Pytest • Selenium</div>
+                </div>
+                
+                <div class="workflow-stage-infinity" data-stage="4">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="tool-logo">
+                    <div class="stage-name">Deploy</div>
+                    <div class="stage-tooltip">Kubernetes • ArgoCD • Helm</div>
+                </div>
+                
+                <div class="workflow-stage-infinity" data-stage="5">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana" class="tool-logo">
+                    <div class="stage-name">Monitor</div>
+                    <div class="stage-tooltip">Grafana • Prometheus • ELK</div>
+                </div>
+                
+                <div class="workflow-stage-infinity" data-stage="6">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible" class="tool-logo">
+                    <div class="stage-name">Operate</div>
+                    <div class="stage-tooltip">Ansible • Terraform • AWS</div>
+                </div>
+                
+                <div class="workflow-stage-infinity" data-stage="7">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack" class="tool-logo">
+                    <div class="stage-name">Feedback</div>
+                    <div class="stage-tooltip">Slack • PagerDuty • Feedback</div>
+                </div>
+                
+                 Flow particles 
+                <div class="flow-particle"></div>
+                <div class="flow-particle"></div>
+                <div class="flow-particle"></div>
+                <div class="flow-particle"></div>
+            </div>
+
+             Workflow Details 
+            <div class="workflow-details">
+                 Live Terminal Output 
+                <div class="workflow-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <span class="terminal-title">DevOps Infinity Console</span>
+                    </div>
+                    <div class="terminal-body" id="workflowTerminal">
+                        <div class="terminal-line">
+                            <span class="prompt">devops@infinity:~$</span> Ready to start the infinite DevOps loop...
+                        </div>
+                    </div>
+                </div>
+
+                 Metrics Dashboard 
+                <div class="workflow-metrics">
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="loopCount">0</div>
+                            <div class="metric-label">Loop Cycles</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="cycleTime">0s</div>
+                            <div class="metric-label">Cycle Time</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="deploymentFreq">0/day</div>
+                            <div class="metric-label">Deploy Frequency</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-value" id="reliability">99.9%</div>
+                            <div class="metric-label">Reliability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+     Resume Section 
     <section id="resume" class="resume">
         <div class="container">
             <h2 class="section-title">Resume</h2>
@@ -1732,15 +2087,23 @@
                         <h4>Contact</h4>
                         <div class="contact-item-resume">
                             <i class="fas fa-envelope"></i>
-                            <span>devopsniv@gmail.com</span>
+                            <span>alex.chen@email.com</span>
+                        </div>
+                        <div class="contact-item-resume">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item-resume">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>San Francisco, CA</span>
                         </div>
                         <div class="contact-item-resume">
                             <i class="fab fa-linkedin"></i>
-                            <span>linkedin.com/in/niv-zilberman</span>
+                            <span>linkedin.com/in/alexchen</span>
                         </div>
                         <div class="contact-item-resume">
                             <i class="fab fa-github"></i>
-                            <span>github.com/niv-devops</span>
+                            <span>github.com/alexchen</span>
                         </div>
                     </div>
 
@@ -1749,64 +2112,41 @@
                         <div class="skill-group">
                             <h5>Cloud Platforms</h5>
                             <div class="skill-list">
-                                <span class="skill-tag"><i class="fa-brands fa-aws fa-2xl"></i></span>
-                                <span class="skill-tag"><img src="images/gcp.png" alt="GCP" class="skill-icon"> GCP</span>
-                                <span class="skill-tag"><img src="images/azure.png" alt="Azure" class="skill-icon"> Azure</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Azure</span>
+                                <span class="skill-tag">GCP</span>
                             </div>
                         </div>
                         <div class="skill-group">
                             <h5>Containers</h5>
                             <div class="skill-list">
-                                <span class="skill-tag"><i class="fa-brands fa-docker fa-xl"></i> Docker</span>
-                                <span class="skill-tag"><img src="images/kubernetes.png" alt="Kubernetes" class="skill-icon"> Kubernetes</span>
-                                <span class="skill-tag"><img src="images/helm.png" alt="Helm" class="skill-icon"> Helm</span>
-                            </div>
-                        </div>
-                        <div class="skill-group">
-                            <h5>CI/CD</h5>
-                            <div class="skill-list">
-                                <span class="skill-tag"><i class="fa-brands fa-git-alt fa-xl"></i> Git</span>
-                                <span class="skill-tag"><i class="fa-brands fa-github fa-xl"></i> GitHub</span>
-                                <span class="skill-tag"><i class="fa-brands fa-gitlab fa-xl"></i> GitLab</span>
-                                <span class="skill-tag"><i class="fa-brands fa-jenkins fa-xl"></i> Jenkins</span>
-                                <span class="skill-tag"><img src="images/gha.png" alt="GitHub Actions" class="skill-icon"> GitHub Actions</span>
-                                <span class="skill-tag"><img src="images/circleci.png" alt="CircleCI" class="skill-icon"> Circle CI</span>
-                                <span class="skill-tag"><img src="images/argocd.png" alt="ArgoCD" class="skill-icon"> ArgoCD</span>
-                                <span class="skill-tag"><img src="images/jfrog.png" alt="jfrog" class="skill-icon"> Artifacory</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Kubernetes</span>
+                                <span class="skill-tag">Helm</span>
                             </div>
                         </div>
                         <div class="skill-group">
                             <h5>IaC & Config</h5>
                             <div class="skill-list">
-                                <span class="skill-tag"><img src="images/terraform.png" alt="Terraform" class="skill-icon"> Terraform</span>
-                                <span class="skill-tag"><img src="images/ansible.png" alt="Ansible" class="skill-icon"> Ansible</span>
+                                <span class="skill-tag">Terraform</span>
+                                <span class="skill-tag">Ansible</span>
+                                <span class="skill-tag">Pulumi</span>
                             </div>
                         </div>
                         <div class="skill-group">
                             <h5>Monitoring</h5>
                             <div class="skill-list">
-                                <span class="skill-tag"><img src="images/prometheus.png" alt="Prometheus" class="skill-icon"> Prometheus</span>
-                                <span class="skill-tag"><img src="images/grafana.png" alt="Grafana" class="skill-icon"> Grafana</span>
-                                <span class="skill-tag"><img src="images/elkstack.png" alt="ELK Stack" class="skill-icon"> ELK Stack</span>
-                            </div>
-                        </div>
-                        <div class="skill-group">
-                            <h5>operating Systems</h5>
-                            <div class="skill-list">    
-                                <span class="skill-tag"><i class="fa-brands fa-linux fa-xl"></i> Linux <i class="fa-brands fa-ubuntu fa-xl"></i></span>
-                                <span class="skill-tag"><i class="fa-brands fa-apple fa-xl"></i> MacOS</span>
-                                <span class="skill-tag"><i class="fa-brands fa-windows fa-xl"></i> Windows</span>
+                                <span class="skill-tag">Prometheus</span>
+                                <span class="skill-tag">Grafana</span>
+                                <span class="skill-tag">ELK</span>
                             </div>
                         </div>
                         <div class="skill-group">
                             <h5>Languages</h5>
                             <div class="skill-list">
-                                <span class="skill-tag"><img src="images/bash.png" alt="Bash" class="skill-icon"> Bash</span>
-                                <span class="skill-tag"><i class="fa-brands fa-python fa-xl"></i> Python</span>
-                                <span class="skill-tag"><i class="fa-brands fa-golang fa-2xl"></i></span>
-                                <span class="skill-tag">Groovy</span>
-                                <span class="skill-tag"><i class="fa-brands fa-c fa-2xl"></i></span>
-                                <span class="skill-tag"><i class="fa-brands fa-java fa-2xl"></i> Java</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Go</span>
+                                <span class="skill-tag">Bash</span>
                             </div>
                         </div>
                     </div>
@@ -1814,9 +2154,20 @@
                     <div class="certifications">
                         <h4>Certifications</h4>
                         <div class="cert-item">
-                            <div class="cert-name">AWS Certified Cloud Practitioner</div>
+                            <div class="cert-name">AWS Solutions Architect Professional</div>
                             <div class="cert-issuer">Amazon Web Services</div>
-                            <a href="https://www.credly.com/badges/6479e509-b1a1-4fa6-897b-a9df93da6d7f/public_url" target="_blank" rel="noreferrer"> <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" alt="CCP" width="100" height="100"/> </a>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-name">Certified Kubernetes Administrator</div>
+                            <div class="cert-issuer">Cloud Native Computing Foundation</div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-name">HashiCorp Terraform Associate</div>
+                            <div class="cert-issuer">HashiCorp</div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-name">Azure DevOps Engineer Expert</div>
+                            <div class="cert-issuer">Microsoft</div>
                         </div>
                     </div>
                 </div>
@@ -1828,74 +2179,83 @@
                         <div class="experience-item">
                             <div class="experience-header">
                                 <div>
-                                    <div class="experience-title">DevOps Engineer</div>
-                                    <div class="experience-company">Complyt Technologies</div>
+                                    <div class="experience-title">Senior DevOps Engineer</div>
+                                    <div class="experience-company">TechCorp Inc.</div>
                                 </div>
-                                <div class="experience-date">Jan 2025 - 📅 Present</div>
+                                <div class="experience-date">2022 - Present</div>
                             </div>
                             <div class="experience-description">
-                                DevOps initiatives focusing on cloud infrastructure, automation, and CI/CD optimization.
+                                Lead DevOps initiatives for a team of 50+ developers, focusing on cloud infrastructure, automation, and CI/CD optimization.
                             </div>
                             <ul class="experience-achievements">
-                                <li>Migrated most of the cloud infrastructure from AWS to GCP, moving from fully managed ECS to self-managed Kubernetes with GKE, significantly reducing cloud costs.</li>
-                                <li>Changed the development workflow to work with GitOps, improving deployment time and making it automated.</li>
-                                <li>Provisioned complete environments with Terraform using Kubernetes, Helm, ArgoCD, Vault, Istio, Grafana, and MongoDB.</li>
-                                <li>Built a Terraform platform for the DevOps team to easily understand and gather infrastructure data, and for developers to provision test environments.</li>
-                                <li>Implemented comprehensive monitoring and alerting systems with Prometheus, Grafana and DataDog.</li>
+                                <li>Architected and deployed Kubernetes clusters serving 10M+ requests daily</li>
+                                <li>Reduced deployment time by 70% through GitOps implementation</li>
+                                <li>Achieved 99.9% uptime across all production services</li>
+                                <li>Led migration from monolithic to microservices architecture</li>
+                                <li>Implemented comprehensive monitoring and alerting systems</li>
                             </ul>
                         </div>
 
                         <div class="experience-item">
                             <div class="experience-header">
                                 <div>
-                                    <div class="experience-title">Venture Capital Analyst</div>
-                                    <div class="experience-company">Inspira - SK Telecom Israel</div>
+                                    <div class="experience-title">DevOps Engineer</div>
+                                    <div class="experience-company">StartupXYZ</div>
                                 </div>
-                                <div class="experience-date">Sep 2022 - May 2024</div>
+                                <div class="experience-date">2020 - 2022</div>
                             </div>
                             <div class="experience-description">
-                                I have made a deal sourcing and market research on Israeli innovation companies for investment opportunities.
+                                Built CI/CD pipelines from scratch and established DevOps practices for a fast-growing startup.
                             </div>
                             <ul class="experience-achievements">
-                                <li>Analyzed the data with tools like Python, Excel, SQL.</li>
-                                <li>Made research summary presentations shown to the investors.</li>
+                                <li>Reduced deployment time from 2 hours to 15 minutes</li>
+                                <li>Implemented Infrastructure as Code using Terraform</li>
+                                <li>Set up comprehensive logging and monitoring solutions</li>
+                                <li>Managed AWS infrastructure for 20+ microservices</li>
+                                <li>Established security best practices and compliance standards</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div>
+                                    <div class="experience-title">Systems Administrator</div>
+                                    <div class="experience-company">Enterprise Solutions Ltd.</div>
+                                </div>
+                                <div class="experience-date">2019 - 2020</div>
+                            </div>
+                            <div class="experience-description">
+                                Managed on-premises and cloud infrastructure, focusing on automation and system reliability.
+                            </div>
+                            <ul class="experience-achievements">
+                                <li>Maintained 99.5% uptime for critical business applications</li>
+                                <li>Automated backup and disaster recovery procedures</li>
+                                <li>Implemented configuration management with Ansible</li>
+                                <li>Migrated legacy systems to cloud infrastructure</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="resume-section">
                         <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-
+                        
                         <div class="education-item">
                             <div class="education-header">
                                 <div>
-                                    <div class="education-title">DevOps Engineering Bootcamp</div>
-                                    <div class="education-school">InfinityLabs R&D</div>
-                                    <ul class="experience-achievements">
-                                        <li>Learned the principles of software development, OS and networks.</li>
-                                        <li>Learned main tools used by DevOps professionals.</li>
-                                        <li>Focused security and scalability best practices across all tools and platforms.</li>
-                                        <li>Learned how to provide solutions following best practices, cost optimization,and manage workflows in the product development cycle.</li>
-                                    </ul>
+                                    <div class="education-title">Bachelor of Science in Computer Science</div>
+                                    <div class="education-school">University of California, Berkeley</div>
                                 </div>
-                                <div class="education-date">May 2024 - Jan 2025</div>
+                                <div class="education-date">2015 - 2019</div>
                             </div>
                         </div>
 
                         <div class="education-item">
                             <div class="education-header">
                                 <div>
-                                    <div class="education-title">Bachelor of Economics and Management</div>
-                                    <div class="education-school">College of Management Academic Studies</div>
-                                    <div class="experience-description">
-                                       Specialized in Information Systems, Big Data, Real Estate, and Capital Markets. Graduated with honors.
-                                    </div>
-                                    <ul class="experience-achievements">
-                                        <li>Microsoft Office - Excel BI (VBA,Macros, VLOOKUP, If function, Power Pivot & Power Query)</li>
-										<li>Analytics: Python, SQL, R, SAS, SAP 4/HANA</li>
-                                    </ul>
+                                    <div class="education-title">DevOps Engineering Bootcamp</div>
+                                    <div class="education-school">Tech Academy</div>
                                 </div>
-                                <div class="education-date">2020 - 2023</div>
+                                <div class="education-date">2019</div>
                             </div>
                         </div>
                     </div>
@@ -1904,11 +2264,67 @@
         </div>
     </section>
 
-    <!-- Footer -->
+     Contact Section 
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in discussing new opportunities, innovative projects, or just chatting about the latest in DevOps and cloud technologies.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>alex.chen@email.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>San Francisco, CA</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://github.com/alexchen" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/alexchen" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://hub.docker.com/u/alexchen" target="_blank">
+                            <i class="fab fa-docker"></i>
+                        </a>
+                        <a href="https://twitter.com/alexchen" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+     Footer 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Niv Zilberman. So long and thanks for all the fish 🐟</p>
+                <p>&copy; 2024 Alex Chen. Built with ❤️ and deployed on GitHub Pages.</p>
                 <div class="footer-links">
                     <a href="#home">Back to Top</a>
                 </div>
@@ -1921,9 +2337,10 @@
         const typingText = document.querySelector('.typing-text');
         const phrases = [
             'DevOps Engineer',
-            'Cloud Practitioner',
-            'Automation Enthusiast',
-            'Infrastructure Builder'
+            'Cloud Architect',
+            'Automation Expert',
+            'Infrastructure Specialist',
+            'CI/CD Pipeline Builder'
         ];
 
         let phraseIndex = 0;
@@ -1982,6 +2399,39 @@
             } else {
                 navbar.style.background = 'rgba(10, 10, 15, 0.8)';
             }
+        });
+
+        // Contact form handling
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                contactForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
         });
 
         // Mobile menu toggle
@@ -2061,6 +2511,310 @@
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
+
+// DevOps Infinity Loop Animation
+class DevOpsInfinityLoop {
+    constructor() {
+        this.stages = document.querySelectorAll('.workflow-stage-infinity');
+        this.particles = document.querySelectorAll('.flow-particle');
+        this.terminal = document.getElementById('workflowTerminal');
+        this.currentStage = 0;
+        this.isRunning = false;
+        this.isPaused = false;
+        this.speed = 1;
+        this.startTime = 0;
+        this.loopCount = 0;
+        this.stageInterval = null;
+        
+        this.initializeControls();
+        this.setupStageMessages();
+        this.setupParticles();
+    }
+    
+    initializeControls() {
+        const startBtn = document.getElementById('startWorkflow');
+        const pauseBtn = document.getElementById('pauseWorkflow');
+        const resetBtn = document.getElementById('resetWorkflow');
+        const speedControl = document.getElementById('speedControl');
+        const speedValue = document.getElementById('speedValue');
+        
+        startBtn.addEventListener('click', () => this.toggleWorkflow());
+        pauseBtn.addEventListener('click', () => this.pauseWorkflow());
+        resetBtn.addEventListener('click', () => this.resetWorkflow());
+        
+        speedControl.addEventListener('input', (e) => {
+            this.speed = parseFloat(e.target.value);
+            speedValue.textContent = `${this.speed}x`;
+            if (this.isRunning && !this.isPaused) {
+                this.restartWithNewSpeed();
+            }
+        });
+    }
+    
+    setupStageMessages() {
+        this.stageMessages = [
+            {
+                stage: 'Plan',
+                tool: 'Jira',
+                messages: [
+                    '📋 Creating user story: API endpoint enhancement',
+                    '🎯 Sprint planning: 2-week iteration started',
+                    '📊 Backlog grooming: 15 stories prioritized',
+                    '✅ Requirements defined and approved'
+                ]
+            },
+            {
+                stage: 'Code',
+                tool: 'Git',
+                messages: [
+                    '🔄 git checkout -b feature/api-enhancement',
+                    '💻 Implementing new REST endpoints',
+                    '📝 Code review: 3 approvals received',
+                    '🔀 git merge feature/api-enhancement'
+                ]
+            },
+            {
+                stage: 'Build',
+                tool: 'Jenkins',
+                messages: [
+                    '🚀 Jenkins pipeline triggered automatically',
+                    '🔨 mvn clean compile - Build successful',
+                    '📦 Creating deployment artifacts',
+                    '✅ Build completed in 2m 34s'
+                ]
+            },
+            {
+                stage: 'Test',
+                tool: 'Testing',
+                messages: [
+                    '🧪 Running unit tests: 156/156 passed',
+                    '🔍 Integration tests: All endpoints verified',
+                    '⚡ Performance tests: <200ms response time',
+                    '🛡️ Security scan: No vulnerabilities found'
+                ]
+            },
+            {
+                stage: 'Deploy',
+                tool: 'Kubernetes',
+                messages: [
+                    '☸️ kubectl apply -f deployment.yaml',
+                    '🔄 Rolling update: 0/3 → 1/3 → 2/3 → 3/3',
+                    '🌐 Service mesh updated with new routes',
+                    '✅ Deployment successful - All pods healthy'
+                ]
+            },
+            {
+                stage: 'Monitor',
+                tool: 'Grafana',
+                messages: [
+                    '📊 Prometheus collecting new metrics',
+                    '📈 Grafana dashboards updated',
+                    '🔔 Alert rules: All systems green',
+                    '📝 Logs indexed in Elasticsearch'
+                ]
+            },
+            {
+                stage: 'Operate',
+                tool: 'Ansible',
+                messages: [
+                    '⚙️ Infrastructure scaling: +2 nodes added',
+                    '🔧 Configuration drift detected and corrected',
+                    '💾 Automated backup completed',
+                    '🔄 System maintenance scheduled'
+                ]
+            },
+            {
+                stage: 'Feedback',
+                tool: 'Slack',
+                messages: [
+                    '📢 Deployment notification sent to #releases',
+                    '📊 Performance metrics shared with team',
+                    '💬 User feedback: 98% satisfaction rate',
+                    '🔄 Planning next iteration based on feedback'
+                ]
+            }
+        ];
+    }
+    
+    setupParticles() {
+        this.particles.forEach((particle, index) => {
+            particle.style.animationDelay = `${index * 2}s`;
+        });
+    }
+    
+    toggleWorkflow() {
+        if (!this.isRunning) {
+            this.startWorkflow();
+        } else if (this.isPaused) {
+            this.resumeWorkflow();
+        } else {
+            this.pauseWorkflow();
+        }
+    }
+    
+    startWorkflow() {
+        this.isRunning = true;
+        this.isPaused = false;
+        this.startTime = Date.now();
+        
+        const startBtn = document.getElementById('startWorkflow');
+        startBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        
+        this.addTerminalMessage('∞ Starting DevOps infinity loop...');
+        this.startParticles();
+        this.startStageLoop();
+        this.updateMetrics();
+    }
+    
+    pauseWorkflow() {
+        this.isPaused = true;
+        clearInterval(this.stageInterval);
+        
+        const startBtn = document.getElementById('startWorkflow');
+        startBtn.innerHTML = '<i class="fas fa-play"></i> Resume';
+        
+        this.addTerminalMessage('⏸️ Infinity loop paused');
+    }
+    
+    resumeWorkflow() {
+        this.isPaused = false;
+        
+        const startBtn = document.getElementById('startWorkflow');
+        startBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        
+        this.addTerminalMessage('▶️ Infinity loop resumed');
+        this.startStageLoop();
+    }
+    
+    resetWorkflow() {
+        this.isRunning = false;
+        this.isPaused = false;
+        this.currentStage = 0;
+        this.loopCount = 0;
+        
+        clearInterval(this.stageInterval);
+        
+        // Reset all stages
+        this.stages.forEach(stage => {
+            stage.classList.remove('active', 'completed');
+        });
+        
+        // Stop particles
+        this.particles.forEach(particle => {
+            particle.classList.remove('active');
+        });
+        
+        // Reset terminal
+        this.terminal.innerHTML = `
+            <div class="terminal-line">
+                <span class="prompt">devops@infinity:~$</span> Ready to start the infinite DevOps loop...
+            </div>
+        `;
+        
+        // Reset metrics
+        document.getElementById('loopCount').textContent = '0';
+        document.getElementById('cycleTime').textContent = '0s';
+        document.getElementById('deploymentFreq').textContent = '0/day';
+        document.getElementById('reliability').textContent = '99.9%';
+        
+        // Reset button
+        const startBtn = document.getElementById('startWorkflow');
+        startBtn.innerHTML = '<i class="fas fa-play"></i> Start Loop';
+    }
+    
+    startParticles() {
+        this.particles.forEach(particle => {
+            particle.classList.add('active');
+        });
+    }
+    
+    startStageLoop() {
+        const stageDelay = 2000 / this.speed; // 2 seconds per stage adjusted by speed
+        
+        this.stageInterval = setInterval(() => {
+            if (this.isPaused) return;
+            
+            this.processCurrentStage();
+            this.currentStage = (this.currentStage + 1) % this.stages.length;
+            
+            // Complete loop cycle
+            if (this.currentStage === 0) {
+                this.loopCount++;
+                this.addTerminalMessage(`∞ Loop cycle ${this.loopCount} completed! Continuing infinitely...`);
+            }
+        }, stageDelay);
+    }
+    
+    processCurrentStage() {
+        // Deactivate all stages
+        this.stages.forEach(stage => {
+            stage.classList.remove('active');
+            if (this.loopCount > 0) {
+                stage.classList.add('completed');
+            }
+        });
+        
+        // Activate current stage
+        const currentStageElement = this.stages[this.currentStage];
+        currentStageElement.classList.remove('completed');
+        currentStageElement.classList.add('active');
+        
+        // Add stage messages
+        const stageData = this.stageMessages[this.currentStage];
+        const randomMessage = stageData.messages[Math.floor(Math.random() * stageData.messages.length)];
+        this.addTerminalMessage(`[${stageData.tool}] ${randomMessage}`);
+    }
+    
+    restartWithNewSpeed() {
+        if (this.stageInterval) {
+            clearInterval(this.stageInterval);
+            this.startStageLoop();
+        }
+    }
+    
+    addTerminalMessage(message) {
+        const line = document.createElement('div');
+        line.className = 'terminal-line';
+        line.innerHTML = `<span class="prompt">devops@infinity:~$</span> ${message}`;
+        this.terminal.appendChild(line);
+        this.terminal.scrollTop = this.terminal.scrollHeight;
+        
+        // Keep only last 15 messages
+        const lines = this.terminal.querySelectorAll('.terminal-line');
+        if (lines.length > 15) {
+            lines[0].remove();
+        }
+    }
+    
+    updateMetrics() {
+        const metricsInterval = setInterval(() => {
+            if (!this.isRunning) {
+                clearInterval(metricsInterval);
+                return;
+            }
+            
+            if (!this.isPaused) {
+                const elapsed = Math.floor((Date.now() - this.startTime) / 1000);
+                document.getElementById('loopCount').textContent = this.loopCount;
+                document.getElementById('cycleTime').textContent = `${elapsed}s`;
+                
+                // Calculate deployment frequency (deployments per day)
+                const deploymentsPerHour = this.loopCount * (3600 / elapsed) || 0;
+                const deploymentsPerDay = Math.floor(deploymentsPerHour * 24);
+                document.getElementById('deploymentFreq').textContent = `${deploymentsPerDay}/day`;
+                
+                // Simulate reliability fluctuation
+                const reliability = (99.5 + Math.random() * 0.5).toFixed(1);
+                document.getElementById('reliability').textContent = `${reliability}%`;
+            }
+        }, 1000);
+    }
+}
+
+// Initialize infinity loop when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    new DevOpsInfinityLoop();
+});
     </script>
 </body>
 </html>
